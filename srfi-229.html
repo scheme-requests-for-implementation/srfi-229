@@ -235,11 +235,11 @@
     <h3>Equivalence</h3>
 
     <p>When invoked on two objects, the <code>eqv?</code> procedure
-      returns <code>#f</code> if one object is a tagged procedure and the other
-      object is a non-procedure or a procedure that is not tagged, or if both
-      objects are tagged procedures but tagged with values such
-      that <code>eq?</code> would return <code>#f</code> when invoked on
-      them.</p>
+      returns <code>#f</code> if one object is a tagged procedure and
+      the other object is a non-procedure or a procedure that is not
+      tagged, or if both objects are tagged procedures but tagged with
+      values such that <code>eq?</code> would return <code>#f</code>
+      when invoked on them.</p>
 
     <h3>Syntax</h3>
 
@@ -327,7 +327,9 @@
 
     <h2 id="implementation">Implementation</h2>
 
-    <p>The following is a portable R7RS implementation.</p>
+    <p>The following is a portable R7RS implementation.  It is fully
+    conformant, but tagged procedures will never be
+    garbage-collected.</p>
 
     <pre>(define-library (srfi 229)
   (export case-lambda/tag
