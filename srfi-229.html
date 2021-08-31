@@ -155,7 +155,7 @@
       defines <a href="https://www.gnu.org/software/mit-scheme/documentation/stable/mit-scheme-ref/Application-Hooks.html"><dfn>application
       hooks</dfn> and <dfn>entities</dfn></a>, which are objects that can
       applied like procedures.  As a demonstration of the generality of the
-      primitives defined by this SRFI, we give a portable implementation of
+      primitives defined by this SRFI, we give a portable sample implementation of
       application hooks and entities on top of this SRFI:</p>
 
     <pre>(define-library (application-hook)
@@ -237,7 +237,7 @@
     <p>When invoked on two objects, the <code>eqv?</code> procedure
       returns <code>#f</code> if one object is a tagged procedure and the other
       object is a non-procedure or a procedure that is not tagged, or if both
-      objects are tagged procedure but tagged with values such
+      objects are tagged procedures but tagged with values such
       that <code>eq?</code> would return <code>#f</code> when invoked on
       them.</p>
 
@@ -249,10 +249,10 @@
       </dt>
       <dd>
 	<p><i>Semantics:</i> First, <code>expression</code> is evaluated to
-	  obtain a value.  Then a procedure that accepts a variable number of
+	  obtain a value.  Then a procedure is returned that accepts a variable number of
 	  arguments, that is lexically scoped in the same manner as a procedure
 	  resulting from a <code>lambda</code> expression, and that
-	  is <dfn>tagged</dfn> with the obtained value is returned.  When the
+	  is <dfn>tagged</dfn> with the obtained value.  When the
 	  procedure is called, it behaves as if constructed by
 	  a <code>case-lambda</code> expression with the
 	  same <code><span class="token">formals</span></code>
@@ -278,8 +278,8 @@
 	<p><i>Note:</i> It is unspecified whether a procedure created by
 	  a <code>lambda</code> or <code>case-lambda</code> expression or
 	  returned by a procedure of one of the standard libraries or defined
-	  by syntax of one of the standard libraries is tagged or not.  In
-	  case, it is tagged, the tag value is unspecified.</p>
+	  by syntax of one of the standard libraries is tagged.  In
+	  case it is tagged, the tag value is unspecified.</p>
       </dd>
       <dt class="entry"><code>(procedure-tag <var>proc</var>)</code><span class="type">procedure</span></dt>
       <dd>
