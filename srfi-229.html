@@ -241,6 +241,32 @@
       values such that <code>eq?</code> would return <code>#f</code>
       when invoked on them.</p>
 
+    <p><i>Note:</i> Note that in an R<sup>7</sup>RS system, all
+      procedures are conceptionally tagged with a storage location and
+      that <code>eqv?</code> returns <code>#t</code> when invoked on
+      procedures whose location tags are equal.  As each tagged
+      procedure (in the sense of this SRFI) is also a procedure in the
+      sense of the Scheme reports, tagged procedures inherit this
+      behavior in R<sup>7</sup>RS systems.</p>
+
+    <p>On the other hand, the syntax and procedures of this SRFI can
+      be used to give procedures also in R<sup>6</sup>RS systems an
+      identity that can be discerned through Scheme procedures:</p>
+
+    <pre class="example">(define-syntax lambda/id
+  (syntax-rules ()
+    ((lambda/id formals body)
+     (lambda/tag (list 'tag) formals body))))
+
+(define lambda/id=?
+  (lambda (f g)
+    (assert (procedure/tag? f))
+    (assert (procedure/tag? g))
+    (eq? (procedure-tag f) (procedure-tag g))))
+
+(define p (lambda/id (x) x))
+(eqv? p p)<span class="result">#t</span></pre>
+
     <h3>Syntax</h3>
 
     <dl class="entries">
