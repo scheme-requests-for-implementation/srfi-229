@@ -22,7 +22,7 @@
 
 (import (scheme base)
 	(srfi 64)
-	(srfi 228))
+	(srfi 229))
 
 (test-begin "Tagged Procedures")
 

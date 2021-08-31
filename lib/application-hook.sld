@@ -34,7 +34,7 @@
           entity-extra
           set-entity-extra!)
   (import (scheme base)
-          (srfi 228))
+          (srfi 229))
   (begin
     (define-record-type apply-hook-tag
       (make-apply-hook-tag procedure extra)

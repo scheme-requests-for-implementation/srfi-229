@@ -20,7 +20,7 @@
 ;; CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 ;; SOFTWARE.
 
-(define-library (srfi 228)
+(define-library (srfi 229)
   (export case-lambda/tag
 	  lambda/tag
 	  procedure/tag?
