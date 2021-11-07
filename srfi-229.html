@@ -152,6 +152,12 @@
       properties, documentation strings, source location information, and other
       things in Scheme.</p>
 
+    <p>Scheme records as defined by R<sup>6</sup>RS or R<sup>7</sup>R7
+      cannot be called as procedures, but this SRFI can be used to
+      implement an alternative record system where the record
+      instances are procedures whose actual fields are stored in a
+      private record as the procedure's tag.</p>
+
     <p>In order to not prevent certain optimizations, the procedure
       tags defined through the facilities presented here are
       immutable.  In other words, the Scheme object used as a tag is
@@ -159,6 +165,23 @@
       mutable fields attached to a procedure, a Scheme object that is
       itself mutable (like a pair, string, vector, or record with
       mutable fields) has to be used as a tag.</p>
+
+    <p>Contrary to proposals that conceptually attach properties to
+      every procedure, this SRFI gives implementations the freedom to
+      have disjoint types of tagged and untagged procedures, both
+      non-empty.  In particular, this SRFI can be implemented at zero
+      costs for the general case of untagged procedures.</p>
+
+    <p>In fact, in the context of SRFI 229, one shouldn't think of
+      procedures falling in just two classes, untagged and tagged ones (note
+      that all procedures may be implementable as tagged ones), but falling
+      into infinitely many classes, one for each type of its tag.  So one can
+      really think of them as callable structs, where the struct is in the
+      tag.  (See MIT/GNU Scheme's apply hooks for an example.)</p>
+
+    <p>Future SRFIs are expected to build on SRFI 229 to provide a
+      procedure type with an extensible tag field, allowing
+      independent composition.</p>
 
     <h3>Application Hooks</h3>
 
