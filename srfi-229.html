@@ -152,6 +152,14 @@
       properties, documentation strings, source location information, and other
       things in Scheme.</p>
 
+    <p>In order to not prevent certain optimizations, the procedure
+      tags defined through the facilities presented here are
+      immutable.  In other words, the Scheme object used as a tag is
+      fixed at procedure creation time.  If an application needs
+      mutable fields attached to a procedure, a Scheme object that is
+      itself mutable (like a pair, string, vector, or record with
+      mutable fields) has to be used as a tag.</p>
+
     <h3>Application Hooks</h3>
 
     <p>MIT/GNU Scheme Scheme
