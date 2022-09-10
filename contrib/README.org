@@ -1,0 +1,2 @@
+This directory contains implementations of SRFI 229 provided by people
+other than Marc Nieper-Wißkirchen, the author of the SRFI.

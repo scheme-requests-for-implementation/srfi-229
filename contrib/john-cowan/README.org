@@ -1,0 +1,2 @@
+This directory contains an implementation of SRFI 229 provided by John
+Cowan.
