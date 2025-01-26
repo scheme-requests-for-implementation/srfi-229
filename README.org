@@ -1,3 +1,6 @@
+
+# SPDX-FileCopyrightText: 2025 Arthur A. Gleckler
+# SPDX-License-Identifier: MIT
 * SRFI 229: Tagged Procedures
 
 ** by Marc Nieper-Wißkirchen
@@ -9,12 +12,11 @@ keywords: [[https://srfi.schemers.org/?keywords=data-structure][Data Structure]]
 This repository hosts [[https://srfi.schemers.org/srfi-229/][SRFI 229]]: Tagged Procedures, a [[https://srfi.schemers.org/][Scheme Request for Implementation]].
 
 This SRFI is in /final/ status.
-
+See also [[/srfi-259/][SRFI 259: Tagged procedures with type safety]].
 The full documentation for this SRFI can be found in the [[https://srfi.schemers.org/srfi-229/srfi-229.html][SRFI Document]].
 
 If you'd like to participate in the discussion of this SRFI, or report issues with it, please [[https://srfi.schemers.org/srfi-229/][join the SRFI-229 mailing list]] and send your message there.
 
 Thank you.
-
 
 [[mailto:srfi-editors@srfi.schemers.org][The SRFI Editors]]
